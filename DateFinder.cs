@@ -15,19 +15,19 @@ namespace MyUtcNow
                 DateTime utcNow = DateTime.UtcNow;
                 string utcNowString = utcNow.ToString("yyyy-MM-dd HH:mm:ss");
 
-                Console.WriteLine("Hozirgi UTC vaqti: " + utcNowString);
+                Console.WriteLine("UTC now: " + utcNowString);
 
                 try
                 {
                     ClipboardService.SetText(utcNowString);
-                    Console.WriteLine("Vaqt clipboardga nusxalandi.");
+                    Console.WriteLine("UTC copied in clipboard.");
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Clipboardga nusxalashda xato yuz berdi: " + ex.Message);
+                    Console.WriteLine("Error copying to clipboard: " + ex.Message);
                 }
 
-                Console.WriteLine("Davom etish uchun 'yes' yoki 'y' ni kiriting, aks holda dastur tugaydi:");
+                Console.WriteLine("Type 'yes' or 'y' to continue, otherwise the program will exit:");
                 yesOrNo = Console.ReadLine();
 
             } while (yesOrNo.ToLower() == "yes" || yesOrNo.ToLower() == "y");
